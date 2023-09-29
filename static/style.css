@@ -1,0 +1,54 @@
+/* Reset some default styles */
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eee7e7;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #333;
+    margin-top: 20px;
+}
+
+#drop-zone {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px auto;
+    width: 80%;
+    cursor: pointer;
+    transition: border-color 0.3s ease-in-out;
+}
+
+#drop-zone p {
+    margin: 0;
+    font-size: 16px;
+    color: #666;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 16px;
+    color: #333;
+    white-space: pre-line; /* Preserve line breaks in the displayed text */
+    overflow: auto; /* Add a scroll bar if the text is too long */
+}
+
+
+/* Style for the drag-and-drop zone when files are being dragged over */
+#drop-zone.drag-over {
+    border-color: #3498db;
+}
