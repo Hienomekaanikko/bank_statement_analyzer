@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-import PyPDF2
+import fitz  # PyMuPDF
 
 app = Flask(__name__)
 
@@ -14,11 +14,19 @@ def upload():
 
     for file in files:
         try:
-            pdf = PyPDF2.PdfFileReader(file)
-            num_pages = pdf.getNumPages()
+            pdf_document = fitz.open(file.stream)
+            num_pages = pdf_document.page_count
+            text = ""
+
+            # Extract text from each page and concatenate it
+            for page_num in range(num_pages):
+                page = pdf_document[page_num]
+                text += page.get_text()
+
             result_messages.append(f'File: {file.filename}, Pages: {num_pages}')
-        except PyPDF2.PdfFileReaderError:
-            result_messages.append(f'Error reading {file.filename}')
+            result_messages.append(f'Text from {file.filename}:\n{text}')
+        except Exception as e:
+            result_messages.append(f'Error reading {file.filename}: {str(e)}')
 
     return jsonify({'message': '<br>'.join(result_messages)})
 
