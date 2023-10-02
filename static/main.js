@@ -18,7 +18,7 @@ dropZone.addEventListener('drop', (e) => {
     const formData = new FormData();
 
     for (const file of files) {
-        formData.append('pdf_files', file);
+        formData.append('csv_files', file);
     }
 
     fetch('/upload', {
@@ -27,6 +27,10 @@ dropZone.addEventListener('drop', (e) => {
     })
     .then((response) => response.json())
     .then((data) => {
-        result.innerHTML = data.message;
+        const preElement = document.createElement('pre');
+        preElement.textContent = data.message;
+        result.innerHTML = '';
+        result.appendChild(preElement);
     });
+    
 });
