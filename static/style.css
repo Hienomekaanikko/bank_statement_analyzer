@@ -5,8 +5,8 @@ body, html {
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #eee7e7;
+    font-family: 'Roboto', sans-serif; /* Use the 'Roboto' font */
+    background-color: #f5f5f5;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -18,9 +18,9 @@ h1 {
 }
 
 #drop-zone {
-    border: 2px dashed #ccc;
+    border: 1px dashed #3498db;
     padding: 20px;
-    background-color: #fff;
+    background-color: #e2dddd;
     margin: 20px auto;
     width: 80%;
     cursor: pointer;
@@ -35,22 +35,52 @@ h1 {
 
 #result {
     margin-top: 20px;
-    padding: 10px;
     background-color: #fff;
-    border: 1px solid #ccc;
     width: 80%;
     margin: 0 auto;
     text-align: left;
     font-size: 16px;
     color: #333;
+    padding: 10px;
+    border-radius: 3x;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    overflow-x: auto;
 }
 
-/* Style for the CSV events */
+/* Style for the event list */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Style for each event */
 .event {
-    padding: 10px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-    margin-bottom: 10px;
-    width: 100%; /* Limit the width to 100% */
-    word-wrap: break-word; /* Allow text to wrap within the element */
+    border: 1px solid #ddd;
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.event:hover {
+    background-color: #f5f5f5;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Cool button style */
+button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #2980b9;
+    transition: background-color 0.3s ease-in-out;
 }
